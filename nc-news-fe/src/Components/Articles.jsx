@@ -1,6 +1,5 @@
 import React from 'react';
 import ArticlesList from './ArticlesList';
-// import ArticlesFilterBar from './ArticlesFilterBar';
 
 const Articles = () => {
     return (

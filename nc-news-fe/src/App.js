@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Router>
         <Articles path='/' />
-        <Topics path='/articles/?topic=:topicName' />
+        <Topics path='/articles/topic/:topic' />
       </Router>
     </div>
   );

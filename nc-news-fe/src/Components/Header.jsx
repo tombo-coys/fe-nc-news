@@ -5,9 +5,7 @@ const Header = () => {
         <header className='headerBar'>
             <h1 className='heading'>NC News</h1> 
             <nav className='navBar'>
-                Football
-                Coding
-                Cooking
+               <h3>Football Coding Cooking</h3> 
             </nav>
         </header>
     );

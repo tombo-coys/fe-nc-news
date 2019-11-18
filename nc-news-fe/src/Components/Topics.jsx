@@ -1,10 +1,11 @@
 import React from 'react';
+import ArticlesList from './ArticlesList';
 
-const Topics = () => {
+const Topics = (props) => {
     return (
-        <div>
-            
-        </div>
+        <section>
+            <ArticlesList topic={props.topic} />
+        </section>
     );
 };
 

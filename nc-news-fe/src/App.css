@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 
 }
 
@@ -16,35 +15,36 @@
 .navBar {
   grid-column-start: 2;
   grid-column-end: 3;
+  align-items: ;
 }
 /* ======= articles list ======= */
 
 .articlesList {
   display: grid;
   grid-template-columns: auto auto auto;
+  gap: 4px;
   justify-content: stretch;
   align-content: stretch;
 }
 
-.filterBar {
-  /* grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  text-align: center; */
-}
-.articlesHeading {
-  /* grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  text-align: center; */
-}
-
 .articleCard {
-  padding: 40px;
+  padding: 10px;
+  box-shadow: 1px 3px 6px 1px #888888
+  /* border: 1px solid #BFBFBF; */
+}
+img{
+  border-radius: 4px;
+  padding: 5px;
+  width: 40px;
+  display: top;
+}
+h4{
+  color:rgb(167, 159, 159);
 }
   
 
 
+/* ======= general styling ======= */
 
 ul{
   padding-inline-start: 0px;

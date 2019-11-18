@@ -10,9 +10,19 @@ class ArticlesList extends Component {
     }
 
     componentDidMount(){
+        console.log('mounting')
         api.getArticles().then((articles) => {
             this.setState({articles, isLoading: false})
         })
+    }
+    componentDidUpdate(prevProps){
+        console.log(prevProps.topic, this.props.topic)
+        if (prevProps.topic !== this.props.topic){
+            console.log('component updating?')
+            api.getArticles(this.props.topic).then((articles) => {
+                this.setState({articles, isLoading: false})
+            })
+        }
     }
 
     render() {
@@ -23,9 +33,9 @@ class ArticlesList extends Component {
                 <h2 className='articlesHeading'>All Articles</h2>
                 <ArticlesFilterBar />
                 <main>
-                    <ul className='articlesList'>{articles.map(article => {
+                    <ul  className='articlesList'>{articles.map(article => {
                 return (
-                    <ArticlesCard article={article} key={article.id} />
+                    <ArticlesCard key={article.id} article={article}  />
                 )
                     })}
                 </ul>
