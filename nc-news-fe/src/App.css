@@ -1,10 +1,10 @@
 .App {
   text-align: center;
-
 }
 
 /* ======= header ======= */
 .headerBar {
+  /* background: rgba(190, 197, 173, 0.144);; */
   display: grid;
 }
 
@@ -12,11 +12,39 @@
   grid-column-start: 1;
   grid-column-end: 2;
 }
+.heading a:visited{
+  color: #FF570A;
+}
+.heading a:hover{
+  color: hotpink;
+}
+.heading a:active{
+  color: aquamarine
+}
+
 .navBar {
   grid-column-start: 2;
   grid-column-end: 3;
-  align-items: ;
+  justify-self: end;
+  color :#12355B;
 }
+.navBar a:visited{
+  color: #FF570A;
+}
+.navBar a:hover{
+  color: hotpink;
+}
+.navBar a:active{
+  color: aquamarine
+}
+
+/* ======= Filter articles bar ======= */
+
+select {
+  
+}
+
+
 /* ======= articles list ======= */
 
 .articlesList {
@@ -28,18 +56,37 @@
 }
 
 .articleCard {
+  /* background:rgba(190, 197, 173, 0.144); */
+  display: grid;
+  grid-template-columns: auto auto;
   padding: 10px;
   box-shadow: 1px 3px 6px 1px #888888
   /* border: 1px solid #BFBFBF; */
 }
-img{
+
+
+/* ======= article card ======= */
+
+.voteButton {
+  border-radius: 4px;
+  padding: 5px;
+  width: 20px;
+}
+
+
+.topicLogo{
   border-radius: 4px;
   padding: 5px;
   width: 40px;
   display: top;
+  justify-self: center;
 }
-h4{
-  color:rgb(167, 159, 159);
+.articleSubheader{
+  /* color:rgb(167, 159, 159); */
+  color: rgba(215, 38, 56, 0.63);
+}
+.articleTitle {
+  color: #420039;
 }
   
 
