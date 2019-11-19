@@ -5,33 +5,36 @@ import * as api from '../api'
 
 class ArticlesList extends Component {
     state = {
-        articles: {},
-        isLoading : true
+        articles: [],
+        isLoading : true,
+        orderby: null,
+        sortby: null
     }
 
     componentDidMount(){
-        console.log('mounting')
-        api.getArticles().then((articles) => {
+        api.getArticles(this.props.topic).then((articles) => {
             this.setState({articles, isLoading: false})
         })
     }
     componentDidUpdate(prevProps){
-        console.log(prevProps.topic, this.props.topic)
         if (prevProps.topic !== this.props.topic){
-            console.log('component updating?')
             api.getArticles(this.props.topic).then((articles) => {
                 this.setState({articles, isLoading: false})
             })
         }
     }
 
+    handleSubmit = (sortby, orderby) => {
+        this.setState({sortby, orderby})
+                }
+
     render() {
         const {articles} = this.state;
+        if (this.state.isLoading === true) return <p>....Loading</p> 
         return (
-            this.state.isLoading? <p>....Loading</p> : 
             <div >
-                <h2 className='articlesHeading'>All Articles</h2>
-                <ArticlesFilterBar />
+
+                <ArticlesFilterBar handleSubmit={this.handleSubmit}/>
                 <main>
                     <ul  className='articlesList'>{articles.map(article => {
                 return (

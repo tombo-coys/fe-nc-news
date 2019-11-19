@@ -5,12 +5,17 @@ const baseUrl = 'https://toms-nc-news-app.herokuapp.com/api/'
 
 
 export const getArticles = (query) => {
-    console.log(query, 'in the api file')
     return axios.get(`${baseUrl}articles`, {
         params: {
             topic: query
         }
     }).then(({ data }) => {
         return data.articles
+    })
+}
+
+export const getOneArticle = (article_id) => {
+    return axios.get(`${baseUrl}/articles/${article_id}`).then(({data}) => {
+        return data.article
     })
 }
