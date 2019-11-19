@@ -4,9 +4,13 @@
 
 /* ======= header ======= */
 .headerBar {
-  /* background: rgba(190, 197, 173, 0.144);; */
+  /* background: #ADFCF9; */
   display: grid;
-}
+ 
+ }
+ header{
+   /* position: fixed; */
+ }
 
 .heading{
   grid-column-start: 1;
@@ -81,12 +85,30 @@ select {
   display: top;
   justify-self: center;
 }
-.articleSubheader{
+.articleSubheader {
   /* color:rgb(167, 159, 159); */
-  color: rgba(215, 38, 56, 0.486);
+  color: rgba(0, 0, 0, 0.425);
 }
-.articleTitle {
-  color: #420039;
+.articleSubheader a{
+  text-decoration: none;
+   color: rgba(255, 88, 10, 0.685)
+}
+.articleSubheader a:hover{
+  /* color:rgb(167, 159, 159); */
+  color: hotpink;
+}
+.articleSubheader a:active{
+  color: aquamarine;
+}
+.articleTitle a{
+  text-decoration: none;
+  color:rgba(255, 88, 10, 0.788);
+}
+.articleTitle a:hover{
+  color: hotpink
+}
+.articleTitle a:active{
+  color: aquamarine;
 }
   
 /* ======= individual article ======= */
@@ -112,6 +134,7 @@ select {
   justify-self: center;
 }
 .individualArticleSubheader{
+
   /* grid-row-start: 2;
   grid-column-start: 1;
   grid-column-end: 2; */
@@ -152,12 +175,16 @@ select {
   grid-column-end: 3;
   grid-row-start:1; */
   justify-self: center;
+  color: rgba(0, 0, 0, 0.747)
 }
-.commentSub p {
+.commentSub{
   /* grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start:2; */
-  color: rgba(215, 38, 56, 0.486);
+  color: rgba(0, 0, 0, 0.473);
+}
+.commentSub a{
+ color: rgba(255, 88, 10, 0.685)
 }
 .voteUpCommentButton{
   /* grid-column-start: 1;
@@ -174,6 +201,34 @@ select {
   border-radius: 4px;
   padding: 5px;
   width: 22px;
+}
+
+/* ======= user styling ======= */
+
+.userContainer{
+  /* justify-self: center; */
+  display: grid;
+  /* width: 900px; */
+  grid-template-columns: auto auto;
+  padding: 10px 10px 10px 10px;
+  margin: 10px;
+  box-shadow: 1px 3px 6px 1px #888888
+}
+.userAvatar{
+  grid-row-start: 1;
+  grid-row-end: 3;
+  border-radius: 4px;
+  padding: 5px;
+  width: 300px;
+}
+.username{
+  grid-row-start: 1;
+  grid-column-start: 2;
+  align-self: center;
+}
+.usersName{
+  grid-row-start: 2;
+  grid-column-start: 2;
 }
 
 /* ======= general styling ======= */

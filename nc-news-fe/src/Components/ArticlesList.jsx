@@ -12,13 +12,19 @@ class ArticlesList extends Component {
     }
 
     componentDidMount(){
-        api.getArticles(this.props.topic).then((articles) => {
+        api.getArticles(this.props).then((articles) => {
             this.setState({articles, isLoading: false})
         })
     }
+
     componentDidUpdate(prevProps){
         if (prevProps.topic !== this.props.topic){
-            api.getArticles(this.props.topic).then((articles) => {
+            api.getArticles(this.props).then((articles) => {
+                this.setState({articles, isLoading: false})
+            })
+        }
+        if (prevProps.author !== this.props.author){
+            api.getArticles(this.props).then((articles) => {
                 this.setState({articles, isLoading: false})
             })
         }

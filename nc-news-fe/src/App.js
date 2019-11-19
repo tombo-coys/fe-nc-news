@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import Articles from './Components/Articles';
 import Topics from './Components/Topics';
 import IndividualArticle from './Components/IndividualArticle';
+import User from './Components/User';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Articles path='/' />
         <Topics path='/articles/topic/:topic' />
         <IndividualArticle path='/article/:article_id' />
+        <User path='/users/:username' />
       </Router>
     </div>
   );
