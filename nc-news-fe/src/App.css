@@ -83,13 +83,98 @@ select {
 }
 .articleSubheader{
   /* color:rgb(167, 159, 159); */
-  color: rgba(215, 38, 56, 0.63);
+  color: rgba(215, 38, 56, 0.486);
 }
 .articleTitle {
   color: #420039;
 }
   
+/* ======= individual article ======= */
 
+.indivdualArticleContainer {
+  display: grid;
+    grid-template-columns: auto auto;
+  justify-content: center;
+}
+
+.individualArticle{
+  /* justify-self: center; */
+  /* display: grid; */
+  /* width: 900px; */
+  /* grid-template-columns: auto auto; */
+  padding: 10px 10px 10px 10px;
+  margin: 10px;
+  box-shadow: 1px 3px 6px 1px #888888
+}
+.individualArticleTitle{
+  /* grid-column-start: 1;
+  grid-column-end: 2; */
+  justify-self: center;
+}
+.individualArticleSubheader{
+  /* grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 2; */
+}
+.articleBody{
+  padding: 0px 40px
+  /* grid-row-start: 3;
+  grid-column-start: 1;
+  grid-column-end: 2; */
+}
+.voteArticleButton{
+  /* grid-row-start: 4; */
+  /* justify-self: center; */
+  border-radius: 4px;
+  padding: 5px;
+  width: 20px;
+}
+.commentBoxContainer{
+  justify-self: stretch;
+  padding: 10px 10px 10px 10px;
+  margin: 10px;
+  box-shadow: 1px 3px 6px 1px #888888;
+ 
+}
+
+.commentBoxContainer textarea {
+  width: 500px;
+  height: 100px;
+}
+
+.commentCard {
+  padding: 10px 10px 10px 10px;
+  margin: 10px;
+  box-shadow: 1px 3px 6px 1px #888888
+}
+.commentBody {
+  /* grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start:1; */
+  justify-self: center;
+}
+.commentSub p {
+  /* grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start:2; */
+  color: rgba(215, 38, 56, 0.486);
+}
+.voteUpCommentButton{
+  /* grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start:3; */
+  border-radius: 4px;
+  padding: 5px;
+  width: 22px;
+}
+.voteDownCommentButton{
+  /* grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start:3; */
+  border-radius: 4px;
+  padding: 5px;
+  width: 22px;
+}
 
 /* ======= general styling ======= */
 

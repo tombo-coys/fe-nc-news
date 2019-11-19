@@ -6,9 +6,7 @@ const Header = () => {
         <header className='headerBar'>
             <h1  className='heading'><Link to ='/'>NC News</Link></h1> 
             <nav className='navBar'>
-               <Link to='/articles/topic/football'>Football</Link> 
-               <Link to='/articles/topic/coding'>Coding</Link> 
-               <Link to='/articles/topic/cooking'>Cooking</Link>
+            <h3><Link to='/articles/topic/football'>Football</Link> <Link to='/articles/topic/coding'>Coding</Link> <Link to='/articles/topic/cooking'>Cooking</Link></h3> 
             </nav>
         </header>
     );

@@ -15,7 +15,13 @@ export const getArticles = (query) => {
 }
 
 export const getOneArticle = (article_id) => {
-    return axios.get(`${baseUrl}/articles/${article_id}`).then(({data}) => {
+    return axios.get(`${baseUrl}/articles/${article_id}`).then(({ data }) => {
         return data.article
+    })
+}
+
+export const getComments = (article_id) => {
+    return axios.get(`${baseUrl}/articles/${article_id}/comments`).then(({ data }) => {
+        return data.comments
     })
 }

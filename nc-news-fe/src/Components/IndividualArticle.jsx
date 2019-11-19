@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import * as api from '../api'
+import DisplayArticle from './DisplayArticle';
+import PostCommentCard from './PostCommentCard';
+import CommentsList from './CommentsList';
 
 
 class IndividualArticle extends Component {
@@ -15,10 +18,16 @@ class IndividualArticle extends Component {
     }
 
     render() {
-        console.log(this.state.article)
-        if (this.state.isLoading === true) return <p>....Loading</p> 
+       const {article, isLoading} = this.state;
+        if (isLoading === true) return <p>....Loading</p> 
         return (
-            <h1> Individual article page</h1>
+            <section className="individualArticleContainer">
+            <ul>
+            <DisplayArticle article={article} />
+            </ul>
+            <PostCommentCard />
+          <CommentsList article_id={article.article_id}/>
+            </section>
         );
     }
 }
