@@ -25,7 +25,6 @@ class IndividualArticle extends Component {
             <ul>
             <DisplayArticle article={article} />
             </ul>
-            <PostCommentCard />
           <CommentsList article_id={article.article_id}/>
             </section>
         );

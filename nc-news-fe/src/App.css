@@ -184,6 +184,9 @@ select {
   width: 20px;
 }
 .commentBoxContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-self: stretch;
   padding: 10px 10px 10px 10px;
   margin: 10px;
@@ -192,6 +195,7 @@ select {
 }
 
 .commentBoxContainer textarea {
+  justify-self: stretch;
   width: 500px;
   height: 100px;
 }

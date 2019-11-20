@@ -2,36 +2,36 @@ import React, { Component } from 'react';
 
 class ArticlesFilterBar extends Component {
     state = {
-        sortBy: '',
-        orderBy: ''
+        sort_by: 'created_at',
+        order_by: 'asc'
     }
 
     handleOrder =(event) => {
-        this.setState({orderBy: event.target.value})
+        this.setState({order_by: event.target.value})
     }
 
     handleSort = (event) => {
-        this.setState({sortBy: event.target.value})
+        this.setState({sort_by: event.target.value})
     }
 
     render() {
         return (
             <form className='filterBar' onSubmit={(event) => {
                 event.preventDefault();
-                this.props.handleSubmit(this.state.sortBy, this.state.orderBy)
+                this.props.handleArticleFilter(this.state.sort_by, this.state.order_by)
             }}>
-                <label htmlFor='sortByOptions'> Sort by: </label>
+                <label htmlFor='sortByOptions'> Sort by: </label><span></span><span></span>
                 <select onChange={this.handleSort}>
-                    <option id='sortByOptions'>Date posted</option>
-                    <option id='sortByOptions'>Title</option>
-                    <option id='sortByOptions'>Commnent Count</option>
-                </select>
-                <label htmlFor='orderByOptions'>    Order by: </label>
+                    <option id='sortByOptions' value='created_at'>Date posted</option>
+                    <option id='sortByOptions' value='title'>Title</option>
+                    <option id='sortByOptions' value='comment_count'>Commnent Count</option>
+                </select><span></span><span></span>
+                <label htmlFor='orderByOptions'>Order by:</label><span></span><span></span>
                 <select onChange={this.handleOrder}>
-                <option id='orderByOptions'>Ascending</option>
-                <option id='orderByOptions'>Descending</option>
-                </select>
-                <button> Search </button>
+                <option id='orderByOptions' value='asc'>Ascending</option>
+                <option id='orderByOptions' value='desc'>Descending</option>
+                </select><span></span><span></span>
+                <button> Filter Articles </button>
             </form>
         );
     }

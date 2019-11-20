@@ -4,8 +4,6 @@ import {Link} from '@reach/router'
 const ArticlesCard = ({article}) => {
     const topic = article.topic;   
     const date = article.created_at.split('T')[0]
-
-    console.log(date)
     return (
         <div className='articleCard'>
             <li > 

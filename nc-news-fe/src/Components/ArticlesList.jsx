@@ -7,31 +7,32 @@ class ArticlesList extends Component {
     state = {
         articles: [],
         isLoading : true,
-        orderby: null,
-        sortby: null
+        order_by: 'asc',
+        sort_by: null
     }
 
     componentDidMount(){
-        api.getArticles(this.props).then((articles) => {
+        api.getArticles(this.props.topic).then((articles) => {
             this.setState({articles, isLoading: false})
         })
     }
 
-    componentDidUpdate(prevProps){
-        if (prevProps.topic !== this.props.topic){
-            api.getArticles(this.props).then((articles) => {
+    componentDidUpdate(prevProps, prevState){
+        const topic = this.props.topic
+        const author = this.props.author
+        const sort_by = this.state.sort_by
+        const order_by = this.state.order_by    
+
+        if (prevProps.topic !== this.props.topic || prevProps.author !== this.props.author || prevState.order_by !== this.state.order_by || prevState.sort_by !== this.state.sort_by){
+            api.getArticles(topic, author, sort_by, order_by).then((articles) => {
                 this.setState({articles, isLoading: false})
             })
         }
-        if (prevProps.author !== this.props.author){
-            api.getArticles(this.props).then((articles) => {
-                this.setState({articles, isLoading: false})
-            })
-        }
+
     }
 
-    handleSubmit = (sortby, orderby) => {
-        this.setState({sortby, orderby})
+    handleArticleFilter = (sort_by, order_by) => {
+            this.setState({sort_by: sort_by, order_by: order_by})
                 }
 
     render() {
@@ -40,7 +41,7 @@ class ArticlesList extends Component {
         return (
             <div >
 
-                <ArticlesFilterBar handleSubmit={this.handleSubmit}/>
+                <ArticlesFilterBar handleArticleFilter={this.handleArticleFilter}/>
                 <main>
                     <ul  className='articlesList'>{articles.map(article => {
                 return (
