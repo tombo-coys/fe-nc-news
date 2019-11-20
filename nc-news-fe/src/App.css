@@ -4,9 +4,23 @@
 }
 
 /* ======= header ======= */
+.logIn{
+  display: flex;
+  content: 13px;
+  padding: 0;
+}
+.loggedInUser {
+  font-size: 12px;
+  text-align: left;
+}
+.userSelect {
+  align-self: center;
+}
+
 .headerBar {
   /* background: #ADFCF9; */
   display: grid;
+  /* height: 60px; */
  
  }
  header{
@@ -33,6 +47,7 @@
 }
 
 .navBar {
+  /* padding: 0px; */
   grid-column-start: 2;
   grid-column-end: 3;
   /* justify-self: center; */
@@ -54,7 +69,6 @@
 span + span {
   margin-left: 10px;
 }
-
 /* ======= Filter articles bar ======= */
 
 select {
@@ -83,15 +97,18 @@ select {
   /* border: 1px solid #BFBFBF; */
 }
 
-
 /* ======= article card ======= */
 
-.voteButton {
-  border-radius: 4px;
+ .voteButton {
+  border-radius: 7px;
   padding: 5px;
+  height: 20px;
   width: 20px;
 }
-
+.voter button{
+  border-radius: 20px;
+  border-color: transparent;
+}
 
 .topicLogo{
   border-radius: 4px;

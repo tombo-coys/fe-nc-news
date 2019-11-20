@@ -14,9 +14,9 @@ class CommentsList extends Component {
         })
     }
 
-    handleSubmit = (username, body) => {
-        const {article_id} = this.props
-        const comment = {username: username, body: body}
+    handleSubmit = (body) => {
+        const {article_id, user} = this.props
+        const comment = {username: user, body: body}
         api.postComment(comment, article_id).then((comment) => {
             this.setState(currentState => {
                return {comments: [comment, ...currentState.comments]}
@@ -26,11 +26,13 @@ class CommentsList extends Component {
 
     render() {
         const {comments} = this.state
+        const user = this.props.user
+
         return (
             <section>
         <PostCommentCard handleSubmit={this.handleSubmit}/>
             <ul className='commentsList'>{comments.map(comment => {
-                return (<CommentCard key={comment.comment_id} comment={comment}/>)
+                return (<CommentCard article_id={this.props.article_id} user={user} key={comment.comment_id} comment={comment}/>)
             })}
                 
             </ul>

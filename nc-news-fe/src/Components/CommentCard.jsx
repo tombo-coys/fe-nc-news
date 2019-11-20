@@ -1,16 +1,26 @@
 import React from 'react';
-import {Link} from '@reach/router'
+import {Link, navigate} from '@reach/router'
 import VoteButtons from './VoteButtons'
+import * as api from '../api'
 
-const CommentCard = ({comment}) => {
+const handleClick = (comment, article_id) => {
+
+    api.deleteComment(comment.comment_id).then(() => {
+    window.alert('comment deleted')
+    navigate(`/article/${article_id}`)
+    // this.forceUpdate();
+})
+}
+
+const CommentCard = ({comment, user, article_id}) => {
     const date = comment.created_at.split('T')[0]
     const votes = comment.votes
     return (
         <li className='commentCard'>
-            <button>Delete Comment</button>
+            {user === comment.author ? <button onClick={()=> {handleClick(comment, article_id)}}>Delete Comment</button> : ''}
             <h4 className='commentBody'>{comment.body}</h4>
-    <p className='commentSub' >Posted by <Link to={`/users/${comment.author}`}> {comment.author} </Link> | Posted on {date} | {comment.votes} Votes </p>  
-    <VoteButtons votes={votes} comment_id={comment.comment_id} />
+            <p className='commentSub' >Posted by <Link to={`/users/${comment.author}`}> {comment.author} </Link> | Posted on {date} | {comment.votes} Votes </p>  
+            <VoteButtons votes={votes} comment_id={comment.comment_id} />
         </li>
     );
 };

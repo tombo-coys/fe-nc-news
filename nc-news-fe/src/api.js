@@ -52,3 +52,9 @@ export const patchCommentVote = (vote, comment_id) => {
         return data.vote
     })
 }
+
+export const deleteComment = (comment_id) => {
+    return axios.delete(`${baseUrl}/comments/${comment_id}`).then(({data}) => {
+        return data
+    })
+}
