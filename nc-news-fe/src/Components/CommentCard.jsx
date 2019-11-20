@@ -3,14 +3,16 @@ import {Link, navigate} from '@reach/router'
 import VoteButtons from './VoteButtons'
 import * as api from '../api'
 
+
 const handleClick = (comment, article_id) => {
 
     api.deleteComment(comment.comment_id).then(() => {
     window.alert('comment deleted')
     navigate(`/article/${article_id}`)
-    // this.forceUpdate();
+    
 })
 }
+
 
 const CommentCard = ({comment, user, article_id}) => {
     const date = comment.created_at.split('T')[0]
@@ -23,6 +25,7 @@ const CommentCard = ({comment, user, article_id}) => {
             <VoteButtons votes={votes} comment_id={comment.comment_id} />
         </li>
     );
+    
 };
 
 export default CommentCard;
