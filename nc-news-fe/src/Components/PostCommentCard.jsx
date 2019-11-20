@@ -16,11 +16,12 @@ class PostCommentCard extends Component {
         return (
             <form onSubmit={(event) => {
                 event.preventDefault();
-                this.props.handleSubmit(this.state.username, this.state.body)
+                this.props.handleSubmit(this.state.username, this.state.body);
+                this.setState({username: '', body: ''})
             }} className='commentBoxContainer'>
-              <label> Username:  <input id='username' className='usernameInput' name='username' type="text" onChange={this.handleUsername}/></label>
+              <label> Username:  <input id='username' value={this.state.username} className='usernameInput' name='username' type="text" onChange={this.handleUsername}/></label>
               <br></br>
-                <textarea onChange={this.handleComment} id='body' className='commentInput' name='commentbox' placeholder='WHACK A COMMENT HERE'>
+                <textarea onChange={this.handleComment} value={this.state.body} id='body' className='commentInput' name='commentbox' placeholder='WHACK A COMMENT HERE'>
                 </textarea><br></br>
                 <button >Add Comment</button>
             </form>

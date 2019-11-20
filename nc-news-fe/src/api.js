@@ -37,7 +37,18 @@ export const getUser = (username) => {
 }
 
 export const postComment = (comment, article_id) => {
-    return axios.post(`${baseUrl}articles/${article_id}/comments`, comment).then(({data}) => {
+    return axios.post(`${baseUrl}/articles/${article_id}/comments`, comment).then(({ data }) => {
         return data.comment
+    })
+}
+
+export const patchArticleVote = (vote, article_id) => {
+    return axios.patch(`${baseUrl}/articles/${article_id}`, vote).then(({ data }) => {
+        return data.vote
+    })
+}
+export const patchCommentVote = (vote, comment_id) => {
+    return axios.patch(`${baseUrl}comments/${comment_id}`, vote).then(({ data }) => {
+        return data.vote
     })
 }

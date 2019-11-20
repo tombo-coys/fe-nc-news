@@ -36,7 +36,7 @@
   grid-column-start: 2;
   grid-column-end: 3;
   /* justify-self: center; */
-  color :#12355B;
+  color :#FF570A;
 }
 .navBar a{
   font-size: 32px;
@@ -77,7 +77,8 @@ select {
   border-radius:7px;
   display: grid;
   grid-template-columns: auto auto;
-  padding: 10px;
+  padding: 10px ;
+  margin: 10px;
   box-shadow: 0px 1px 3px 1px #888888a2;
   /* border: 1px solid #BFBFBF; */
 }
@@ -222,6 +223,14 @@ select {
 .commentSub a{
  color: rgba(255, 88, 10, 0.685)
 }
+
+section .voter {
+  display: flex ;
+  flex-flow:row ;
+justify-content: space-around;
+}
+
+
 .voteUpCommentButton{
   /* grid-column-start: 1;
   grid-column-end: 2;
@@ -245,6 +254,7 @@ select {
   /* justify-self: center; */
   display: grid;
   /* width: 900px; */
+  border-radius:7px;
   grid-template-columns: auto auto;
   padding: 10px 10px 10px 10px;
   margin: 10px;

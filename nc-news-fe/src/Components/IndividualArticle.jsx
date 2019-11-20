@@ -1,7 +1,6 @@
  import React, { Component } from 'react';
 import * as api from '../api'
 import DisplayArticle from './DisplayArticle';
-import PostCommentCard from './PostCommentCard';
 import CommentsList from './CommentsList';
 
 
