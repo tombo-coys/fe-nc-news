@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import * as api from '../api'
 
 class VoteButtons extends Component {
-
     state={
         change: 0,
         disabled: false
     }
 
     handleVote = (num) => {
+        console.log(num, "***")
         const comment_id = this.props.comment_id
         const article_id = this.props.article_id
         const vote = {inc_votes: num}
@@ -22,8 +22,6 @@ class VoteButtons extends Component {
             api.patchCommentVote(vote, comment_id)  
         } 
     }
-  
-    
 
     render() {
         return (

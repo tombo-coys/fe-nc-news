@@ -14,26 +14,33 @@ class ArticlesList extends Component {
         errorDetails: null
     }
 
-    componentDidMount(){
-        api.getArticles(this.props.topic).then((articles) => {
-            this.setState({articles, isLoading: false})
+    fetchArticles = () => {
+        const topic = this.props.topic
+        const author = this.props.author
+        const sort_by = this.state.sort_by
+        const order_by = this.state.order_by 
+        api.getArticles(topic, author, sort_by, order_by).then((articles) => {
+            this.setState({articles, isLoading: false, error: false, errorDetails: null})
         }).catch(err => {
             this.setState({error: true, errorDetails: err})
         })
     }
 
+    componentDidMount(){
+        this.fetchArticles(this.props.topic)
+   
+    }
+
     componentDidUpdate(prevProps, prevState){
-        const topic = this.props.topic
-        const author = this.props.author
-        const sort_by = this.state.sort_by
-        const order_by = this.state.order_by    
+        console.log('hello updater')
+        const topicChange = prevProps.topic !== this.props.topic;
+        const authorChange = prevProps.author !== this.props.author;
+        const orderByChange = prevState.order_by !== this.state.order_by;
+        const sortByChange = prevState.sort_by !== this.state.sort_by
 
-        if (prevProps.topic !== topic || prevProps.author !== author || prevState.order_by !== order_by || prevState.sort_by !== sort_by){
-            api.getArticles(topic, author, sort_by, order_by).then((articles) => {
-                this.setState({articles, isLoading: false, error: false, errorDetails: null})
-            })
+            if (topicChange || authorChange || orderByChange || sortByChange){
+            this.fetchArticles(this.props.topic, this.props.author, this.state.sort_by, this.state.order_by)
         }
-
     }
 
     handleArticleFilter = (sort_by, order_by) => {

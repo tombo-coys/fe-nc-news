@@ -24,7 +24,7 @@ class IndividualArticle extends Component {
         const username = this.props.user
        const {article, isLoading, error, errorDetails} = this.state;
        if (error) return <ErrorHandler errorDetails={errorDetails}/>
-        if (isLoading === true) return <p>....Loading</p> 
+        if (isLoading === true) return <><p>....Loading</p><img className='loadingImg' src={require(`../Images/loadingGif.gif`)}alt='loading spinner'></img> </> 
         return (
             <section className="individualArticleContainer">
             <ul>
