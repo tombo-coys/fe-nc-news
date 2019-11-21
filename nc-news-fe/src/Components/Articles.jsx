@@ -3,7 +3,7 @@ import ArticlesList from './ArticlesList';
 
 const Articles = () => {
     return (
-        <section>
+        <section className='articleListContainer'>
             <h2 className='articlesHeading'>All Articles</h2>
             <ArticlesList /> 
         </section>

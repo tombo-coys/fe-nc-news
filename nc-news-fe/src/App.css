@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  max-width: 950px;
+  margin: 0 auto !important; 
+	float: none !important; 
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 
@@ -78,9 +81,20 @@ select {
 
 /* ======= articles list ======= */
 
+.articleListContainer{
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 100px;
+  border-right: 0px;
+  margin-right: 0px;
+  padding-right: 100px;
+  width: 900px; */
+}
+
 .articlesList {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto ;
   gap: 20px;
   justify-content: stretch;
   align-content: stretch;
