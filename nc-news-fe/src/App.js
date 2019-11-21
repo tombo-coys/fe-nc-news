@@ -6,6 +6,7 @@ import Articles from './Components/Articles';
 import Topics from './Components/Topics';
 import IndividualArticle from './Components/IndividualArticle';
 import User from './Components/User';
+import ErrorHandler from './Components/ErrorHandler';
 // import Login from './Components/Login';
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
           <Topics path='/articles/topic/:topic' />
           <IndividualArticle user={username} path='/article/:article_id' />
           <User path='/users/:username' />
+          <ErrorHandler error={{status: 400, msg: 'bad request, that page doesnt exist!'}} default/>
         </Router>
       </div>
     );

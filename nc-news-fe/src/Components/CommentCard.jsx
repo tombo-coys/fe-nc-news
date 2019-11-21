@@ -4,19 +4,18 @@ import VoteButtons from './VoteButtons'
 import * as api from '../api'
 
 
-const handleClick = (comment, article_id) => {
-
-    api.deleteComment(comment.comment_id).then(() => {
-    window.alert('comment deleted')
-    navigate(`/article/${article_id}`)
-    
-})
-}
 
 
-const CommentCard = ({comment, user, article_id}) => {
+const CommentCard = ({comment, user, article_id, removeComment}) => {
     const date = comment.created_at.split('T')[0]
     const votes = comment.votes
+    const handleClick = (comment, article_id) => {
+        removeComment(comment.comment_id);
+        api.deleteComment(comment.comment_id).then(() => {
+            window.alert('comment deleted')
+            navigate(`/article/${article_id}`)
+})
+}
     return (
         <li className='commentCard'>
             {user === comment.author ? <button onClick={()=> {handleClick(comment, article_id)}}>Delete Comment</button> : ''}

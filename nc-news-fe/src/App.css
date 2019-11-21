@@ -321,6 +321,9 @@ ul{
 li {
   list-style-type: none;
 }
+.loadingImg {
+  width: 100px;
+}
 
 /* ======= general styling ======= */
 
@@ -349,6 +352,13 @@ li {
   .heading a:active{
     color: aquamarine
   }
+  .userAvatar{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border-radius: 4px;
+    padding: 5px;
+    width: 200px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -362,5 +372,10 @@ li {
     gap: 0px;
     justify-content: stretch;
     align-content: stretch;
+  }
+  .commentBoxContainer textarea {
+    justify-self: stretch;
+    width: 300px;
+    height: 100px;
   }
 }

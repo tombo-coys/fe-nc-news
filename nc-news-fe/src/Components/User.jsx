@@ -1,23 +1,29 @@
 import React, { Component } from 'react';
 import UserCard from './UserCard';
 import * as api from '../api'
-import ArticlesList from './ArticlesList'
+import ArticlesList from './ArticlesList';
+import ErrorHandler from './ErrorHandler'
 
 
 class User extends Component {
     state = {
         user: {},
-        isLoading: true
+        isLoading: true,
+        error: false,
+        errorDetails: null
     }
 
     componentDidMount(){
         api.getUser(this.props.username).then((user) => {
             this.setState({user, isLoading: false})
+        }).catch(err => {
+            this.setState({error: true, errorDetails: err})
         })
     }
 
     render() {
-        const {user} = this.state
+        const {user, error, errorDetails} = this.state
+        if (error) return <ErrorHandler errorDetails={errorDetails}/>
         return (
             <section>
                 <h2>{user.username} user page</h2>

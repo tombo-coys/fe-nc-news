@@ -14,6 +14,14 @@ class CommentsList extends Component {
         })
     }
 
+    removeComment = (comment_id) => {
+        this.setState(currentState => {
+        return {comments: currentState.comments.filter(comment => {
+             return comment_id !== comment.comment_id
+        })}
+    })
+    }
+
     handleSubmit = (body) => {
         const {article_id, user} = this.props
         const comment = {username: user, body: body}
@@ -32,7 +40,7 @@ class CommentsList extends Component {
             <section>
         <PostCommentCard handleSubmit={this.handleSubmit}/>
             <ul className='commentsList'>{comments.map(comment => {
-                return (<CommentCard article_id={this.props.article_id} user={user} key={comment.comment_id} comment={comment}/>)
+                return (<CommentCard removeComment={this.removeComment} article_id={this.props.article_id} user={user} key={comment.comment_id} comment={comment}/>)
             })}
                 
             </ul>
