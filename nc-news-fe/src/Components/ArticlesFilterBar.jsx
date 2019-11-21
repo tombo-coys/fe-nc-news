@@ -24,7 +24,7 @@ class ArticlesFilterBar extends Component {
                 <select onChange={this.handleSort}>
                     <option id='sortByOptions' value='created_at'>Date posted</option>
                     <option id='sortByOptions' value='title'>Title</option>
-                    <option id='sortByOptions' value='comment_count'>Commnent Count</option>
+                    <option id='sortByOptions' value='comment_count'>Comment Count</option>
                 </select><span></span><span></span>
                 <label htmlFor='orderByOptions'>Order by:</label><span></span><span></span>
                 <select onChange={this.handleOrder}>

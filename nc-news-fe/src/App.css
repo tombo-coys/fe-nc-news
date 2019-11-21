@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
   max-width: 950px;
@@ -38,6 +39,7 @@
 .heading a {
   font-size: 42px;
   text-decoration: none;
+  color: #FF570A;
 }
 .heading a:visited{
   color: #FF570A;
@@ -59,6 +61,7 @@
 .navBar a{
   font-size: 32px;
   text-decoration: none;
+  color: #FF570A;
 }
 .navBar a:visited{
   color: #FF570A;
@@ -317,4 +320,47 @@ ul{
 
 li {
   list-style-type: none;
+}
+
+/* ======= general styling ======= */
+
+@media only screen and (max-width: 820px) {
+  .App{
+    margin: 0 auto !important; 
+    float: none !important; 
+  }
+  .articlesList {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    justify-content: stretch;
+    align-content: stretch;
+  }
+  .heading a {
+    text-decoration: none;
+    color: #FF570A;
+  }
+  .heading a:visited{
+    color: #FF570A;
+  }
+  .heading a:hover{
+    color: black;
+  }
+  .heading a:active{
+    color: aquamarine
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .App{
+    margin: 0 auto !important; 
+    float: none !important; 
+  }
+  .articlesList {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 0px;
+    justify-content: stretch;
+    align-content: stretch;
+  }
 }
