@@ -13,24 +13,25 @@ class IndividualArticle extends Component {
     }
 
     componentDidMount(){
-        api.getOneArticle(this.props.article_id).then((article) => {
+        const article_id = this.props.article_id
+        api.getOneArticle(article_id).then((article) => {
             this.setState({article, isLoading: false})
-        }).catch(err => {
-            this.setState({error: true, errorDetails: err})
-        })
+            }).catch(err => {
+                this.setState({error: true, errorDetails: err})
+            })
     }
 
     render() {
         const username = this.props.user
-       const {article, isLoading, error, errorDetails} = this.state;
-       if (error) return <ErrorHandler errorDetails={errorDetails}/>
+        const {article, isLoading, error, errorDetails} = this.state;
+        if (error) return <ErrorHandler errorDetails={errorDetails}/>
         if (isLoading === true) return <><p>....Loading</p><img className='loadingImg' src={require(`../Images/loadingGif.gif`)}alt='loading spinner'></img> </> 
         return (
             <section className="individualArticleContainer">
             <ul>
             <DisplayArticle article={article} />
             </ul>
-          <CommentsList user={username} article_id={article.article_id}/>
+            <CommentsList user={username} article_id={article.article_id}/>
             </section>
         );
     }

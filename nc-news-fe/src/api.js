@@ -2,8 +2,6 @@ import axios from 'axios'
 
 const baseUrl = 'https://toms-nc-news-app.herokuapp.com/api/'
 
-
-
 export const getArticles = (topic, author, sort_by, order_by) => {
     return axios.get(`${baseUrl}articles`, {
         params: {

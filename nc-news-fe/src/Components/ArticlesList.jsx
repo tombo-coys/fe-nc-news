@@ -13,7 +13,7 @@ class ArticlesList extends Component {
         error: false,
         errorDetails: null
     }
-
+    
     fetchArticles = () => {
         const topic = this.props.topic
         const author = this.props.author
@@ -27,33 +27,38 @@ class ArticlesList extends Component {
     }
 
     componentDidMount(){
-        this.fetchArticles(this.props.topic)
+        this.fetchArticles()
     }
 
     componentDidUpdate(prevProps, prevState){
-        const topicChange = prevProps.topic !== this.props.topic;
-        const authorChange = prevProps.author !== this.props.author;
-        const orderByChange = prevState.order_by !== this.state.order_by;
-        const sortByChange = prevState.sort_by !== this.state.sort_by
+        const topic = this.props.topic
+        const author = this.props.author
+        const sort_by = this.state.sort_by
+        const order_by = this.state.order_by 
+        const topicChange = prevProps.topic !== topic;
+        const authorChange = prevProps.author !== author;
+        const orderByChange = prevState.order_by !== order_by;
+        const sortByChange = prevState.sort_by !== sort_by;
+
         if (topicChange || authorChange || orderByChange || sortByChange){
-            this.fetchArticles(this.props.topic, this.props.author, this.state.sort_by, this.state.order_by)
+            this.fetchArticles(topic, author, sort_by, order_by)
         }
     }
 
     handleArticleFilter = (sort_by, order_by) => {
-        this.setState({sort_by: sort_by, order_by: order_by})
+        this.setState({sort_by, order_by})
     }
 
     render() {
-        const {articles, error, errorDetails} = this.state;
+        const {articles, error, errorDetails, isLoading} = this.state;
         const topic = this.props.topic;
         let topicHeading ='';
-        if (this.props.topic){
-            topicHeading = this.props.topic.charAt(0).toUpperCase() + this.props.topic.slice(1)
+        if (topic){
+            topicHeading = topic.charAt(0).toUpperCase() + topic.slice(1)
         }
         
         if (error) return <ErrorHandler errorDetails={errorDetails}/>
-        if (this.state.isLoading === true) return <><p>....Loading</p>  <img className='loadingImg' src={require(`../Images/loadingGif.gif`)}alt='loading spinner'></img> </>
+        if (isLoading === true) return <><p>....Loading</p>  <img className='loadingImg' src={require(`../Images/loadingGif.gif`)}alt='loading spinner'></img> </>
 
         return (
             <div >

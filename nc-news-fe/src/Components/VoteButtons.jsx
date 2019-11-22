@@ -7,7 +7,6 @@ class VoteButtons extends Component {
     }
 
     handleVote = (num) => {
-        console.log(num, "***")
         const comment_id = this.props.comment_id
         const article_id = this.props.article_id
         const vote = {inc_votes: num}

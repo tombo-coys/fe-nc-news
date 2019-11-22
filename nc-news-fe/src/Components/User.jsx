@@ -14,7 +14,8 @@ class User extends Component {
     }
 
     componentDidMount(){
-        api.getUser(this.props.username).then((user) => {
+        const username = this.props.username
+        api.getUser(username).then((user) => {
             this.setState({user, isLoading: false})
         }).catch(err => {
             console.dir('its an error')

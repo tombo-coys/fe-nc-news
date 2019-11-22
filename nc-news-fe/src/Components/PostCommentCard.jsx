@@ -2,23 +2,24 @@ import React, { Component } from 'react';
 
 class PostCommentCard extends Component {
     state = {
-
        body: ''
     }
   
     handleComment = (event) => {
-        this.setState({body: event.target.value})
+        const comment = event.target.value
+        this.setState({body: comment})
     }
 
     render() {
+        const newComment = this.state.body
         return (
             <form onSubmit={(event) => {
                 event.preventDefault();
-                this.props.handleSubmit(this.state.body);
+                this.props.handleSubmit(newComment);
                 this.setState({ body: ''})
             }} className='commentBoxContainer'>
-              <br></br>
-                <textarea onChange={this.handleComment} value={this.state.body} id='body' className='commentInput' name='commentbox' placeholder='WHACK A COMMENT HERE'>
+                <br></br>
+                <textarea onChange={this.handleComment} value={newComment} id='body' className='commentInput' name='commentbox' placeholder='Type your comment here'>
                 </textarea><br></br>
                 <button >Add Comment</button>
             </form>
