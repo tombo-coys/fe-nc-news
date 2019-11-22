@@ -7,7 +7,6 @@ import Topics from './Components/Topics';
 import IndividualArticle from './Components/IndividualArticle';
 import User from './Components/User';
 import ErrorHandler from './Components/ErrorHandler';
-// import Login from './Components/Login';
 
 class App extends Component {
   state = {

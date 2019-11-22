@@ -31,10 +31,8 @@ class ArticlesList extends Component {
     }
 
     componentDidUpdate(prevProps, prevState){
-        const topic = this.props.topic
-        const author = this.props.author
-        const sort_by = this.state.sort_by
-        const order_by = this.state.order_by 
+        const {topic, author} = this.props
+        const {sort_by, order_by} = this.state
         const topicChange = prevProps.topic !== topic;
         const authorChange = prevProps.author !== author;
         const orderByChange = prevState.order_by !== order_by;
