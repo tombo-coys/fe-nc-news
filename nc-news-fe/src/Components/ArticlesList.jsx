@@ -28,7 +28,6 @@ class ArticlesList extends Component {
 
     componentDidMount(){
         this.fetchArticles(this.props.topic)
-   
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -36,7 +35,6 @@ class ArticlesList extends Component {
         const authorChange = prevProps.author !== this.props.author;
         const orderByChange = prevState.order_by !== this.state.order_by;
         const sortByChange = prevState.sort_by !== this.state.sort_by
-        console.log({sortByChange, orderByChange})
         if (topicChange || authorChange || orderByChange || sortByChange){
             this.fetchArticles(this.props.topic, this.props.author, this.state.sort_by, this.state.order_by)
         }
@@ -53,7 +51,7 @@ class ArticlesList extends Component {
         if (this.props.topic){
             topicHeading = this.props.topic.charAt(0).toUpperCase() + this.props.topic.slice(1)
         }
-
+        
         if (error) return <ErrorHandler errorDetails={errorDetails}/>
         if (this.state.isLoading === true) return <><p>....Loading</p>  <img className='loadingImg' src={require(`../Images/loadingGif.gif`)}alt='loading spinner'></img> </>
 
@@ -62,12 +60,12 @@ class ArticlesList extends Component {
                 {topic === 'football' ||topic === 'coding' ||topic === 'cooking' ? <h2 className='topicsHeading'>{topicHeading} Articles</h2> : ''}
                 <ArticlesFilterBar handleArticleFilter={this.handleArticleFilter}/>
                 <main>
-                    <ul  className='articlesList'>{articles.map(article => {
-                return (
-                    <ArticlesCard key={article.article_id} article={article}  />
-                )
+                    <ul className='articlesList'>{articles.map(article => {
+                        return (
+                            <ArticlesCard key={article.article_id} article={article}  />
+                        )
                     })}
-                </ul>
+                    </ul>
                 </main>
             </div>
         );

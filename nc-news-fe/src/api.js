@@ -17,7 +17,6 @@ export const getArticles = (topic, author, sort_by, order_by) => {
     })
 }
 
-
 export const getOneArticle = (article_id) => {
     return axios.get(`${baseUrl}/articles/${article_id}`).then(({ data }) => {
         return data.article

@@ -124,6 +124,7 @@ select {
 }
 .voter button{
   border-radius: 20px;
+  background: transparent;
   border-color: transparent;
 }
 
