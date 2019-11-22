@@ -4,7 +4,7 @@
   max-width: 950px;
   margin: 0 auto !important; 
 	float: none !important; 
-  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* ======= header ======= */
@@ -59,7 +59,7 @@
   color :#FF570A;
 }
 .navBar a{
-  font-size: 32px;
+  font-size: 30px;
   text-decoration: none;
   color: #FF570A;
 }
