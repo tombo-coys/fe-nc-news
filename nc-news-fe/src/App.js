@@ -39,7 +39,7 @@ class App extends Component {
           <Topics path='/articles/topic/:topic' />
           <IndividualArticle user={username} path='/article/:article_id' />
           <User path='/users/:username' />
-          <ErrorHandler error={{status: 400, msg: 'bad request, that page doesnt exist!'}} default/>
+          <ErrorHandler error={{status: 400, msg: 'bad request, that page doesnt exist!'}} path='/*'/>
         </Router>
       </div>
     );
