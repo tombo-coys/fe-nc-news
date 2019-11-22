@@ -1,6 +1,7 @@
 import React from 'react';
 
 const UserCard = ({user}) => {
+    
     return (
         <div className='userContainer'>
             <img className='userAvatar' src={`${user.avatar_url}`} alt='user avatar'></img>

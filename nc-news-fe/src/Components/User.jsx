@@ -17,6 +17,7 @@ class User extends Component {
         api.getUser(this.props.username).then((user) => {
             this.setState({user, isLoading: false})
         }).catch(err => {
+            console.dir('its an error')
             this.setState({error: true, errorDetails: err})
         })
     }
