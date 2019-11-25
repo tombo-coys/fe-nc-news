@@ -2,6 +2,8 @@
 
 This repo is the front-end for a news application concept, utilising the back-end API I built, which you can see [here](https://github.com/tombo-coys/be-nc-news). This front-end allows users to view articles, rate them positively or negatively, make comments as a logged in user, delete their comments, and rate individual comments. The front-end provides the user with an interactive interface - allowing them to make HTTP methods to the back-end API. 
 
+The aim of this project was to bring together the front-end skills and technologies learnt during our front-end block at Northcoders, i.e. building an interactive user interface using ReactJs, and making asynchronous API calls to the server we had previously built in our back-end block review. The project consolidates my overall understanding of CRUD applications.
+
 ## Hosting the front-end
 
 The front-end was built using React, utilising Reach-Router to manage the route transitions and Axios to make HTTP requests. The site is hosted on Netlify [here](https://toms-nc-news-concept.netlify.com/)
@@ -42,6 +44,7 @@ As a user you can:
 - vote on an article and immediately see the change.
 - vote on a comment and immediately see the change.
 
+The site is mobile-responsive, without sacrificing the style or fucntionality. 
 
 ## Built With 
 
