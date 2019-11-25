@@ -44,7 +44,7 @@ As a user you can:
 - vote on an article and immediately see the change.
 - vote on a comment and immediately see the change.
 
-The site is mobile-responsive, without sacrificing the style or fucntionality. 
+The site is mobile-responsive, without sacrificing the style or functionality. 
 
 ## Built With 
 
@@ -55,7 +55,7 @@ The site is mobile-responsive, without sacrificing the style or fucntionality.
 
 ## Acknowledgements
 
-- [Northcoders](https://northcoders.com/) for the support and wonderful curriculum.
+- [Northcoders](https://northcoders.com/) for the support and  curriculum.
 
 
 ### Logos 
