@@ -3,9 +3,6 @@ import {Link} from '@reach/router'
 import VoteButtons from './VoteButtons'
 import * as api from '../api'
 
-
-
-
 const CommentCard = ({comment, user, removeComment}) => {
     const date = comment.created_at.split('T')[0]
     const votes = comment.votes
