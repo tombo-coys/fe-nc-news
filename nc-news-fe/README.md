@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Toms-NC-News-App
 
-## Available Scripts
+This repo is the front-end for a news application concept, utilising the back-end API I built, which you can see [here](https://github.com/tombo-coys/be-nc-news). This front-end allows users to view articles, rate them positively or negatively, make comments as a logged in user, delete their comments, and rate individual comments. The front-end provides the user with an interactive interface - allowing them to make HTTP methods to the back-end API. 
 
-In the project directory, you can run:
+## Hosting the front-end
 
-### `npm start`
+The front-end was built using React, utilising Reach-Router to manage the route transitions and Axios to make HTTP requests. The site is hosted on Netlify [here](https://toms-nc-news-concept.netlify.com/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+To run the project locally, follow the instructions below.
 
-### `npm test`
+Clone this repository by running the code below in your terminal:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    git clone https://github.com/tombo-coys/fe-nc-news.git
 
-### `npm run build`
+`cd` into the directory and install the required dependencies (react(^16.12.0), axios(^0.19.0) and @reach/router(^1.2.1)) by running the code below in the directory:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    npm install
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+In the project directory you can run the app using
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    npm start
 
-### `npm run eject`
+This will run the ap in its developemtn mode, and your browser should open up with the site. If not, open [http://localhost:3000](http://localhost:3000) to view the site. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## User stories
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+As a user you can:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- view a list of all articles
+- view a page for each topic with a list of related articles.
+- view an individual article.
+- view an individual article's comments.
+- sort articles by:
+  - date created
+  - comment_count
+  - votes
+- post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
+- delete my own comments (as a default logged in user. e.g. 'jessjelly').
+- vote on an article and immediately see the change.
+- vote on a comment and immediately see the change.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Built With 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React](https://reactjs.org/) - Javascript library for building interfaces.
+- [Reach Router](https://reach.tech/router) - A route manager for the react-app.
+- [Axios](https://github.com/axios/axios) - A promise based HTTP client for the browser and node.js.
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Acknowledgements
 
-### Analyzing the Bundle Size
+- [Northcoders](https://northcoders.com/) for the support and wonderful curriculum.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+### Logos 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- The favicon used was made by [srip](https://www.flaticon.com/authors/srip) from [www.flaticon.com](www.flaticon.com)
 
-### Advanced Configuration
+- The coding topic logo was made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](www.flaticon.com)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- The football topic logo was made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](www.flaticon.com)
 
-### Deployment
+- The cooking topic logo was made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](www.flaticon.com)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- The voting arrows were made by [Lyolya](https://www.flaticon.com/authors/lyolya) from [www.flaticon.com](www.flaticon.com)
