@@ -1,6 +1,6 @@
 # Toms-NC-News-App
 
-This repo is the front-end for a news application concept, utilising the back-end API I built, which you can see [here](https://github.com/tombo-coys/be-nc-news). This front-end allows users to view articles, rate them positively or negatively, make comments as a logged in user, delete their comments, and rate individual comments. The front-end provides the user with an interactive interface - allowing them to make HTTP methods to the back-end API. 
+This repo is the front-end for a news application concept, utilising the back-end API I built [here](https://github.com/tombo-coys/be-nc-news). This front-end allows users to view articles, rate them positively or negatively, make comments as a logged in user, delete their comments, and rate individual comments. The front-end provides the user with an interactive interface - allowing them to make HTTP methods to the back-end API. 
 
 The aim of this project was to bring together the front-end skills and technologies learnt during our front-end block at Northcoders, i.e. building an interactive user interface using ReactJs, and making asynchronous API calls to the server we had previously built in our back-end block review. The project consolidates my overall understanding of CRUD applications.
 
