@@ -6,9 +6,9 @@ class Search extends Component {
     }
     render() {
         return (
-            <div>
-                
-            </div>
+            <form>
+                <input></input>
+            </form>
         );
     }
 }
