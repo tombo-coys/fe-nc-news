@@ -197,7 +197,7 @@ span + span {
 
 .deleteButton {
   font: "Open Sans";
-  background-color: #FF570A;
+  background-color: rgba(255, 88, 10, 0.719);
   color: white;
   border-radius: 7px;
   padding: 0.5rem 0;
