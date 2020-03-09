@@ -15,7 +15,7 @@ const CommentCard = ({comment, user, removeComment}) => {
 }
     return (
         <li className='commentCard'>
-            {user === comment.author ? <button onClick={()=> {handleClick(comment)}}>Delete Comment</button> : ''}
+            {user === comment.author ? <button className="deleteButton" onClick={()=> {handleClick(comment)}}>Delete Comment</button> : ''}
             <h4 className='commentBody'>{comment.body}</h4>
             <p className='commentSub' >Posted by <Link to={`/users/${comment.author}`}> {comment.author} </Link> | Posted on {date} | {comment.votes} Votes </p>  
             <VoteButtons votes={votes} comment_id={comment.comment_id} />
